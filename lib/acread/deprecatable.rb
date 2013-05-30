@@ -1,5 +1,3 @@
-require 'continuable' if Acread::run_19?
-
 module Deprecatable
 
   def self.included(base)
@@ -37,7 +35,6 @@ module Deprecatable
   end
 
   class DeprecatedAttributeError < Exception
-    include Continuable if Acread::run_19?
   end
 
 end

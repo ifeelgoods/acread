@@ -31,7 +31,6 @@ end
 ## find attribute usage
 you can catch the `DeprecatedAttributeError` exception and for example put a backtrace in a specific logger.
 
-If you are using ruby > 1.9, Acread use the gem continuable (https://github.com/cmaruz/continuable).
 The DeprecatedAttributeError can then be continued, this mean you can catch it and continue normal ActiveRecord behavior.
 You're code hunting can then be done without any effect on your datas by simply catching the exception, logging and continuing.
 
