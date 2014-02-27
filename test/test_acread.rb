@@ -54,7 +54,7 @@ class TestAcread < Test::Unit::TestCase
   end
 
   def test_columns_exclude_deprecated_attributes
-    h = @bob.send(:columns).map(&:name)
+    h = @bob.class.columns.map(&:name)
     assert !(h.include? 'long_name')
   end
 
@@ -69,7 +69,7 @@ class TestAcread < Test::Unit::TestCase
   end
 
   def test_non_deprecated_class_columns_output_all_attributes
-    h = @james.send(:columns).map(&:name)
+    h = @james.class.columns.map(&:name)
     assert h.include? 'long_name'
   end
 
