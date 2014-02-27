@@ -5,8 +5,8 @@ class ActiveRecord::Base
 
   include Deprecatable
 
-  def columns
-    self.class.columns.reject { |c| (self.class.deprecated_attributes || []).include? c.name.to_s}
+  def self.columns
+   super.reject { |c| (self.deprecated_attributes || []).include? c.name.to_s}
   end
 
   def attribute_names
