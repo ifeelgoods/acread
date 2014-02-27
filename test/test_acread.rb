@@ -36,18 +36,6 @@ class TestAcread < Test::Unit::TestCase
     assert_raise(Deprecatable::DeprecatedAttributeError) { @bob.long_name = 'Bon' }
   end
 
-  def test_write_dreprecated_with_continuation
-    return true unless Acread::run_19?
-    v = 'failure'
-    begin
-      @bob.long_name = 'bobob'
-      v = @bob.long_name
-    rescue Deprecatable::DeprecatedAttributeError => e
-      e.continue
-    end
-    assert_equal 'bobob', v
-  end
-
   def test_hash_exclude_deprecated_attributes
     h = @bob.serializable_hash
     assert !(h.keys.include? 'long_name')
