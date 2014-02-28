@@ -14,7 +14,6 @@ class ActiveRecord::Base
   end
 
   # ensure the deprecated attributes will be skip when serialize the record
-
   alias_method :super_serializable_hash, :serializable_hash
   def serializable_hash(options = {})
     options = {} if options.nil?
