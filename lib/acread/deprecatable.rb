@@ -34,7 +34,7 @@ module Deprecatable
     end
 
     def respond_to?(*args)
-      if deprecated_attributes.include?(args[0])
+      if deprecated_attributes.include?("#{args[0]}=")
         false
       else
         super
