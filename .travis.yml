@@ -1,7 +1,8 @@
+cache:
+  - bundler
 language: ruby
 rvm:
-  - 2.0.0
-  - 1.9.3
-#  - rbx-19mode
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+  - 2.1
+  - 2.2
+
+sudo: false
