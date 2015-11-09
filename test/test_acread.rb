@@ -21,7 +21,7 @@ end
 class TestAcread < Test::Unit::TestCase
   def setup
     @bob = Person.create!(:name => 'bob')
-    @james = PersonFull.create(:long_name => 'James the magnific')
+    @james = PersonFull.create!(:long_name => 'James the magnific')
   end
 
   def test_cretor_with_deprecated_field_raise_exception
@@ -65,4 +65,10 @@ class TestAcread < Test::Unit::TestCase
     h = @james.serializable_hash
     assert h.keys.include? 'long_name'
   end
+
+  def test_attributes_not_include_attributes
+    h = @bob.attributes
+    assert !(h.include? 'long_name')
+  end
+  
 end
