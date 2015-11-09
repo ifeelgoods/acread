@@ -10,7 +10,7 @@ class ActiveRecord::Base
   end
 
   def attributes
-    super.except(self.class.deprecated_attributes)
+    super.dup.except!(*self.class.deprecated_attributes)
   end
 
   # ensure the deprecated attributes will be skip when serialize the record

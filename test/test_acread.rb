@@ -70,5 +70,5 @@ class TestAcread < Test::Unit::TestCase
     h = @bob.attributes
     assert !(h.include? 'long_name')
   end
-  
+
 end
